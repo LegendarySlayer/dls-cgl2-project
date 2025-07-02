@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLS CGL2 - Steel Coil Inspection System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Copy the body content from the artifact above -->
+      <div class="container">
+        <div class="header">
+            <h1>DLS CGL2</h1>
+            <p>Steel Coil Quality Inspection System</p>
+        </div>
+
+        <div class="main-content">
+            <!-- Coil ID Selection -->
+            <div class="coil-section">
+                <div class="coil-id-section">
+                    <label for="coilId">COIL ID:</label>
+                    <select id="coilId" name="coilId">
+                        <option value="">Select Coil ID</option>
+                        <option value="CGL2-001">CGL2-001</option>
+                        <option value="CGL2-002">CGL2-002</option>
+                        <option value="CGL2-003">CGL2-003</option>
+                        <option value="CGL2-004">CGL2-004</option>
+                        <option value="CGL2-005">CGL2-005</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- TOP Inspection -->
+            <div class="inspection-section">
+                <div class="section-header top">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                    </svg>
+                    TOP Inspection
+                </div>
+                <div class="section-content">
+                    <div class="defect-form" id="topDefectForm">
+                        <div class="form-group">
+                            <label>Defect Name</label>
+                            <select id="topDefectName">
+                                <option value="">Select Defect</option>
+                                <option value="Scratch">Scratch</option>
+                                <option value="Dent">Dent</option>
+                                <option value="Edge Crack">Edge Crack</option>
+                                <option value="Surface Defect">Surface Defect</option>
+                                <option value="Coating Defect">Coating Defect</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Start Length</label>
+                            <input type="number" id="topStartLength" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>End Length</label>
+                            <input type="number" id="topEndLength" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>Start Width</label>
+                            <input type="number" id="topStartWidth" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>End Width</label>
+                            <input type="number" id="topEndWidth" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>Severity</label>
+                            <select id="topSeverity">
+                                <option value="">Select Severity</option>
+                                <option value="1">1 - Minor</option>
+                                <option value="2">2 - Low</option>
+                                <option value="3">3 - Medium</option>
+                                <option value="4">4 - High</option>
+                                <option value="5">5 - Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="save-btn" onclick="addTopDefect()">SAVE</button>
+                    
+                    <table class="defect-table" id="topDefectTable">
+                        <thead>
+                            <tr>
+                                <th>Defect Name</th>
+                                <th>Start Length</th>
+                                <th>End Length</th>
+                                <th>Start Width</th>
+                                <th>End Width</th>
+                                <th>Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Scratch</td>
+                                <td>450</td>
+                                <td>500</td>
+                                <td>100</td>
+                                <td>200</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Defect 1</td>
+                                <td>950</td>
+                                <td>1000</td>
+                                <td>700</td>
+                                <td>800</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- BOTTOM Inspection -->
+            <div class="inspection-section">
+                <div class="section-header bottom">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 22L2 17V7c0-5.55 3.84-9.74 9-11 5.16 1.26 9 5.45 9 11v10l-10 5z"/>
+                    </svg>
+                    BOTTOM Inspection
+                </div>
+                <div class="section-content">
+                    <div class="defect-form" id="bottomDefectForm">
+                        <div class="form-group">
+                            <label>Defect Name</label>
+                            <select id="bottomDefectName">
+                                <option value="">Select Defect</option>
+                                <option value="Scratch">Scratch</option>
+                                <option value="Dent">Dent</option>
+                                <option value="Edge Crack">Edge Crack</option>
+                                <option value="Surface Defect">Surface Defect</option>
+                                <option value="Coating Defect">Coating Defect</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Start Length</label>
+                            <input type="number" id="bottomStartLength" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>End Length</label>
+                            <input type="number" id="bottomEndLength" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>Start Width</label>
+                            <input type="number" id="bottomStartWidth" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>End Width</label>
+                            <input type="number" id="bottomEndWidth" placeholder="mm">
+                        </div>
+                        <div class="form-group">
+                            <label>Severity</label>
+                            <select id="bottomSeverity">
+                                <option value="">Select Severity</option>
+                                <option value="1">1 - Minor</option>
+                                <option value="2">2 - Low</option>
+                                <option value="3">3 - Medium</option>
+                                <option value="4">4 - High</option>
+                                <option value="5">5 - Critical</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="save-btn" onclick="addBottomDefect()">SAVE</button>
+                    
+                    <table class="defect-table" id="bottomDefectTable">
+                        <thead>
+                            <tr>
+                                <th>Defect Name</th>
+                                <th>Start Length</th>
+                                <th>End Length</th>
+                                <th>Start Width</th>
+                                <th>End Width</th>
+                                <th>Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Scratch</td>
+                                <td>450</td>
+                                <td>500</td>
+                                <td>100</td>
+                                <td>200</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Defect 1</td>
+                                <td>950</td>
+                                <td>1000</td>
+                                <td>700</td>
+                                <td>800</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TDC Grade Section -->
+            <div class="tdc-section">
+                <h3>TDC Grade Specifications</h3>
+                <table class="defect-table">
+                    <thead>
+                        <tr>
+                            <th>Grade</th>
+                            <th>Width (mm)</th>
+                            <th>Thickness (mm)</th>
+                            <th>Length (m)</th>
+                            <th>Weight (kg)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Standard</td>
+                            <td>1250</td>
+                            <td>0.8</td>
+                            <td>2000</td>
+                            <td>15680</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Inspection Remarks -->
+            <div class="remarks-section">
+                <h3>Inspection Remarks</h3>
+                <textarea id="inspectionRemarks" placeholder="Coil inspection will be entered by the operator. He may enter the lengthy text.">Coil inspection will be entered by the operator. He may enter the lengthy text.</textarea>
+                <br><br>
+                <button class="save-btn" onclick="saveRemarks()">SAVE</button>
+            </div>
+
+            <!-- Inspection Status -->
+            <div class="status-section">
+                <h3>Inspection Status</h3>
+                <div class="status-row">
+                    <div class="status-group">
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select id="inspectionStatus" onchange="toggleHoldDescription()">
+                                <option value="">Select Status</option>
+                                <option value="Pass">Pass</option>
+                                <option value="Hold">Hold</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="status-group">
+                        <div class="form-group hold-description" id="holdDescriptionGroup">
+                            <label>Hold Description</label>
+                            <textarea id="holdDescription" placeholder="Reason for putting the coil on hold status" rows="3">Reason for putting the coil on hold status</textarea>
+                        </div>
+                    </div>
+                </div>
+                <button class="save-btn" onclick="saveStatus()">SAVE</button>
+            </div>
+
+            <!-- Image Upload Sections -->
+            <div class="image-section">
+                <h4>Top Defect Images</h4>
+                <input type="file" id="topImages" class="image-upload" multiple accept="image/*">
+                <label for="topImages" class="upload-label">Choose Top Defect Images</label>
+            </div>
+
+            <div class="image-section">
+                <h4>Bottom Defect Images</h4>
+                <input type="file" id="bottomImages" class="image-upload" multiple accept="image/*">
+                <label for="bottomImages" class="upload-label">Choose Bottom Defect Images</label>
+            </div>
+
+            <!-- Final Save -->
+            <div class="final-save">
+                <button onclick="generateReport()">FINALIZE INSPECTION REPORT</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
