@@ -16,7 +16,7 @@ This is a responsive web application developed during my Tata Steel Internship. 
 - Final report generation
 
 ## 🌐 Live Preview
-👉 [Click here to view the project](https://<your-username>.github.io/steel-coil-inspection/)
+👉 [Click here to view the project](https://legendaryslayer.github.io/dls-cgl2-project/)
 
 ## 📄 Author
 Ashutosh Jha – B.Tech CSE, KIIT University
